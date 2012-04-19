@@ -1,5 +1,5 @@
 var Mortgage = {};
-Mortgage.Calculator = function Mortgage(options) {
+Mortgage.Fixed = function Mortgage(options) {
   if(options === undefined) {
     throw "Missing required options";
   }

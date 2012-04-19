@@ -11,7 +11,7 @@ describe("Mortgage", function() {
         annual_taxes: 500,
         annual_insurance: 500
       };
-      mortgage = new Mortgage.Calculator(defaults);
+      mortgage = new Mortgage.Fixed(defaults);
     });
     describe("calculations", function() {
       it("years", function() {
@@ -86,7 +86,7 @@ describe("Mortgage", function() {
         annual_taxes: 1000,
         annual_insurance: 1000
       };
-      mortgage = new Mortgage.Calculator(defaults);
+      mortgage = new Mortgage.Fixed(defaults);
     });
     describe("calculations", function() {
       it("years", function() {
@@ -162,7 +162,7 @@ describe("Mortgage", function() {
         annual_taxes: 10000,
         annual_insurance: 10000
       };
-      mortgage = new Mortgage.Calculator(defaults);
+      mortgage = new Mortgage.Fixed(defaults);
     });
     describe("calculations", function() {
       it("years", function() {
