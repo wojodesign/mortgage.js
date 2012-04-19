@@ -1,5 +1,17 @@
 var Mortgage = {};
 Mortgage.Calculator = function Mortgage(options) {
+  // Check for required params
+  var required = ['years','interest_percent','price','down_payment_percent'],
+      keys = Object.keys(options),
+      i = 0;
+
+  for(i = 0; i < required.length; i = i + 1) {
+    var param = required[i];
+    if (!options.hasOwnProperty(param)) {
+      throw "Missing required parameter:  " + param;
+    }
+  }
+
   // Private Methods
   var years = function () { return options.years; },
 
