@@ -1,8 +1,10 @@
 var Mortgage = {};
 Mortgage.Calculator = function Mortgage(options) {
+  if(options === undefined) {
+    throw "Missing required options";
+  }
   // Check for required params
   var required = ['years','interest_percent','price','down_payment_percent'],
-      keys = Object.keys(options),
       i = 0;
 
   for(i = 0; i < required.length; i = i + 1) {
