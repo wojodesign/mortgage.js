@@ -182,7 +182,100 @@ describe("Mortgage", function() {
 
       it("amortization table", function() {
         expect(mortgage.amortization_table() !== undefined);
-        console.log(mortgage.amortization_table());
+      });
+    });
+  });
+
+  describe("30 yr fixed, 1M, 5.5%, .60 LTV", function() {
+    var mortgage;
+    beforeEach(function() {
+      defaults = {
+        years: 30,
+        price: 1000000,
+        market_value: 1000000,
+        down_payment_percent: 40,
+        interest_percent: 5.5,
+        annual_taxes: 10000,
+        annual_insurance: 10000
+      };
+      mortgage = new Mortgage.Calculator(defaults);
+    });
+    describe("calculations", function() {
+      it("years", function() {
+        expect(mortgage.years()).toEqual(defaults.years);
+      });
+
+      it("price", function() {
+        expect(mortgage.price()).toEqual(1000000);
+      });
+
+      it("price_in_cents", function() {
+        expect(mortgage.price_in_cents()).toEqual(defaults.price * 100);
+      });
+      it("market_value", function() {
+        expect(mortgage.market_value()).toEqual(1000000);
+      });
+      it("down_payment_percent", function() {
+        expect(mortgage.down_payment_percent()).toEqual(40);
+      });
+
+      it("down_payment_rate", function() {
+        expect(mortgage.down_payment_rate()).toEqual(0.40);
+      });
+
+      it("down_payment", function() {
+        expect(mortgage.down_payment()).toEqual(400000);
+      });
+      it("down_payment_in_cents", function() {
+        expect(mortgage.down_payment_in_cents()).toEqual(40000000);
+      });
+      it("amount", function() {
+        expect(mortgage.amount()).toEqual(600000);
+      });
+      it("amount_in_cents", function() {
+        expect(mortgage.amount_in_cents()).toEqual(60000000);
+      });
+
+      it("interest_percent", function() {
+        expect(mortgage.interest_percent()).toEqual(5.5);
+      });
+
+      it("interest_rate", function() {
+        expect(mortgage.interest_rate()).toEqual(0.055);
+      });
+
+      it("interest_factor", function() {
+        expect(mortgage.interest_factor()).toEqual(176.1217631246164);
+      });
+
+      it("annual_taxes", function() {
+        expect(mortgage.annual_taxes()).toEqual(10000);
+      });
+
+      it("annual_insurance", function() {
+        expect(mortgage.annual_insurance()).toEqual(10000);
+      });
+
+      it("monthly_payment", function() {
+        expect(mortgage.monthly_payment()).toEqual(3406.73);
+      });
+      it("annual_payment", function() {
+        expect(mortgage.annual_payment()).toEqual(40880.76);
+      });
+
+      it("monthly_pmi", function() {
+        expect(mortgage.monthly_pmi()).toEqual(0);
+      });
+
+      it("ltv_ratio_percent", function() {
+        expect(mortgage.ltv_ratio_percent()).toEqual(60);
+      });
+      it("annual_pmi", function() {
+        expect(mortgage.annual_pmi()).toEqual(0);
+      });
+
+      it("amortization table", function() {
+        expect(mortgage.amortization_table() !== undefined);
       });
     });
   });
