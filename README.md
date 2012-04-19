@@ -4,7 +4,10 @@
 
 This is a super simple Javascript Mortgage calculator.
 
-## USAGE
+This is very much a work in progress and not fully tested.  Use at your
+own risk.
+
+## Usage.
 
     var mortgage = new Mortgage.Calculator({
                         years: 30,
