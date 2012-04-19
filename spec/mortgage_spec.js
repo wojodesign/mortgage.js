@@ -22,9 +22,6 @@ describe("Mortgage", function() {
         expect(mortgage.price()).toEqual(100000);
       });
 
-      it("price_in_cents", function() {
-        expect(mortgage.price_in_cents()).toEqual(defaults.price * 100);
-      });
       it("market_value", function() {
         expect(mortgage.market_value()).toEqual(100000);
       });
@@ -32,34 +29,19 @@ describe("Mortgage", function() {
         expect(mortgage.down_payment_percent()).toEqual(10);
       });
 
-      it("down_payment_rate", function() {
-        expect(mortgage.down_payment_rate()).toEqual(0.10);
-      });
 
       it("down_payment", function() {
         expect(mortgage.down_payment()).toEqual(10000);
       });
-      it("down_payment_in_cents", function() {
-        expect(mortgage.down_payment_in_cents()).toEqual(1000000);
-      });
       it("amount", function() {
         expect(mortgage.amount()).toEqual(90000);
-      });
-      it("amount_in_cents", function() {
-        expect(mortgage.amount_in_cents()).toEqual(9000000);
       });
 
       it("interest_percent", function() {
         expect(mortgage.interest_percent()).toEqual(6.5);
       });
 
-      it("interest_rate", function() {
-        expect(mortgage.interest_rate()).toEqual(0.065);
-      });
 
-      it("interest_factor", function() {
-        expect(mortgage.interest_factor()).toEqual(158.21081953707426);
-      });
 
       it("annual_taxes", function() {
         expect(mortgage.annual_taxes()).toEqual(500);
@@ -115,9 +97,6 @@ describe("Mortgage", function() {
         expect(mortgage.price()).toEqual(250000);
       });
 
-      it("price_in_cents", function() {
-        expect(mortgage.price_in_cents()).toEqual(defaults.price * 100);
-      });
       it("market_value", function() {
         expect(mortgage.market_value()).toEqual(250000);
       });
@@ -125,34 +104,19 @@ describe("Mortgage", function() {
         expect(mortgage.down_payment_percent()).toEqual(20);
       });
 
-      it("down_payment_rate", function() {
-        expect(mortgage.down_payment_rate()).toEqual(0.20);
-      });
 
       it("down_payment", function() {
         expect(mortgage.down_payment()).toEqual(50000);
       });
-      it("down_payment_in_cents", function() {
-        expect(mortgage.down_payment_in_cents()).toEqual(5000000);
-      });
       it("amount", function() {
         expect(mortgage.amount()).toEqual(200000);
-      });
-      it("amount_in_cents", function() {
-        expect(mortgage.amount_in_cents()).toEqual(20000000);
       });
 
       it("interest_percent", function() {
         expect(mortgage.interest_percent()).toEqual(6.5);
       });
 
-      it("interest_rate", function() {
-        expect(mortgage.interest_rate()).toEqual(0.065);
-      });
 
-      it("interest_factor", function() {
-        expect(mortgage.interest_factor()).toEqual(158.21081953707426);
-      });
 
       it("annual_taxes", function() {
         expect(mortgage.annual_taxes()).toEqual(1000);
@@ -209,9 +173,6 @@ describe("Mortgage", function() {
         expect(mortgage.price()).toEqual(1000000);
       });
 
-      it("price_in_cents", function() {
-        expect(mortgage.price_in_cents()).toEqual(defaults.price * 100);
-      });
       it("market_value", function() {
         expect(mortgage.market_value()).toEqual(1000000);
       });
@@ -219,34 +180,19 @@ describe("Mortgage", function() {
         expect(mortgage.down_payment_percent()).toEqual(40);
       });
 
-      it("down_payment_rate", function() {
-        expect(mortgage.down_payment_rate()).toEqual(0.40);
-      });
 
       it("down_payment", function() {
         expect(mortgage.down_payment()).toEqual(400000);
       });
-      it("down_payment_in_cents", function() {
-        expect(mortgage.down_payment_in_cents()).toEqual(40000000);
-      });
       it("amount", function() {
         expect(mortgage.amount()).toEqual(600000);
-      });
-      it("amount_in_cents", function() {
-        expect(mortgage.amount_in_cents()).toEqual(60000000);
       });
 
       it("interest_percent", function() {
         expect(mortgage.interest_percent()).toEqual(5.5);
       });
 
-      it("interest_rate", function() {
-        expect(mortgage.interest_rate()).toEqual(0.055);
-      });
 
-      it("interest_factor", function() {
-        expect(mortgage.interest_factor()).toEqual(176.1217631246164);
-      });
 
       it("annual_taxes", function() {
         expect(mortgage.annual_taxes()).toEqual(10000);

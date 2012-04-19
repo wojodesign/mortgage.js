@@ -119,6 +119,7 @@ Mortgage.Calculator = function Mortgage(options) {
     }
     return amortizations;
   };
+
   // Public Methods
   this.years = years;
   this.price = price;
@@ -137,14 +138,4 @@ Mortgage.Calculator = function Mortgage(options) {
   this.annual_debt_service = annual_debt_service;
   this.monthly_debt_service = monthly_debt_service;
   this.amortization_table = amortization_table;
-
-  // For testing only
-  this.price_in_cents =  price_in_cents;
-  this.down_payment_in_cents = down_payment_in_cents;
-  this.down_payment_rate = down_payment_rate;
-  this.amount_in_cents = amount_in_cents;
-  this.interest_rate = interest_rate;
-  this.interest_factor = interest_factor;
-  this.annual_payment_in_cents = annual_payment_in_cents;
-  this.market_value_in_cents = market_value_in_cents;
 }
