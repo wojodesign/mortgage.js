@@ -20,5 +20,5 @@ This is a super simple Javascript Mortgage calculator.
     mortgage.monthly_debt_service() // with PMI
     mortgage.annual_payment()  // without PMI
     mortgage.annual_debt_service()  // with PMI
-    mortgagge.amortization_table() // like what.
+    mortgage.amortization_table() // like what.
 
