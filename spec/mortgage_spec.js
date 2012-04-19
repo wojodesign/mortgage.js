@@ -72,15 +72,21 @@ describe("Mortgage", function() {
     it("monthly_payment", function() {
       expect(mortgage.monthly_payment()).toEqual(568.86);
     });
+    it("annual_payment", function() {
+      expect(mortgage.annual_payment()).toEqual(6826.32);
+    });
+
+    it("monthly_pmi", function() {
+      expect(mortgage.monthly_pmi()).toEqual(49.50);
+    });
+
     it("ltv_ratio_percent", function() {
       expect(mortgage.ltv_ratio_percent()).toEqual(90);
     });
     it("annual_pmi", function() {
       expect(mortgage.annual_pmi()).toEqual(594);
     });
-    it("monthly_pmi", function() {
-      expect(mortgage.monthly_pmi()).toEqual(49.50);
-    });
+
     it("amortization table", function() {
         expect(mortgage.amortization_table().length === 30);
     });
