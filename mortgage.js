@@ -1,38 +1,42 @@
 var Mortgage = {};
 Mortgage.Fixed = function Mortgage(options) {
-  if(options === undefined) {
-    throw "Missing required options";
-  }
-  // Check for required params
-  var required = ['years','interest_percent','price','down_payment_percent'],
-      i = 0;
+  // TODO:  To keep or to not to keep?  That is the question.
+  //
+  //if(options === undefined) {
+    ////throw "Missing required options";
+     //options = {years:}
+  //}
+  //// Check for required params
+  //var required = ['years','interest_percent','price','down_payment_percent'],
+      //i = 0;
 
-  for(i = 0; i < required.length; i = i + 1) {
-    var param = required[i];
-    if (!options.hasOwnProperty(param)) {
-      throw "Missing required parameter:  " + param;
-    }
-  }
+  //for(i = 0; i < required.length; i = i + 1) {
+    //var param = required[i];
+    //if (!options.hasOwnProperty(param)) {
+      //throw "Missing required parameter:  " + param;
+    //}
+  //}
 
   // Private Methods
-  var years = function () { return options.years; },
+  var years = function () { return options.years || 0; },
 
-  interest_rate = function () { return options.interest_percent / 100; },
+  interest_percent = function () { return options.interest_percent || 0; },
+
+  interest_rate = function () { return interest_percent() / 100; },
 
   monthly_interest_rate = function () { return interest_rate() / 12; },
 
-  price = function () { return options.price; },
+  price = function () { return options.price || 0; },
 
   price_in_cents = function () { return price() * 100; },
 
   market_value = function () {
-    var x = options.market_value !== undefined && options.market_value > 0 ? options.market_value : price();
-    return x;
+    return options.market_value !== undefined && options.market_value > 0 ? options.market_value : price();
   },
 
   market_value_in_cents = function () { return market_value() * 100; },
 
-  down_payment_percent = function () { return options.down_payment_percent; },
+  down_payment_percent = function () { return options.down_payment_percent || 0; },
 
   down_payment_rate = function () { return down_payment_percent() / 100; },
 
@@ -48,11 +52,10 @@ Mortgage.Fixed = function Mortgage(options) {
 
   ltv_ratio_percent = function () { return ltv_ratio() * 100; },
 
-  annual_taxes = function () { return options.annual_taxes; },
+  annual_taxes = function () { return options.annual_taxes || 0; },
 
-  annual_insurance = function () { return options.annual_insurance; },
+  annual_insurance = function () { return options.annual_insurance || 0; },
 
-  interest_percent = function () { return options.interest_percent; },
 
   interest_factor = function () {
     var i = 0;
@@ -153,3 +156,4 @@ Mortgage.Fixed = function Mortgage(options) {
   this.monthly_debt_service = monthly_debt_service;
   this.amortization_table = amortization_table;
 }
+
